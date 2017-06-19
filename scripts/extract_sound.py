@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# extract sound from a video file, giving it correct extension
+
 import os
 import sys
 import subprocess

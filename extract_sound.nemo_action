@@ -11,9 +11,9 @@
 
 
 # The name to show in the menu, locale supported with standard desktop spec.
-Name=Extract sound
+Name=Extract sound from video
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to extract sound from video, and create a .wav file in the same dir
+Comment=Use ffmpeg to extract sound from video, and create an audio file in the same dir
 
 Exec=<scripts/extract_sound.py %F>
 EscapeSpaces=true
