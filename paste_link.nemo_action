@@ -1,0 +1,23 @@
+[Nemo Action]
+
+# Quick'n dirty link creation
+
+Name=Create Link
+Name[fr]=Créer un lien
+Name[de]=Verknüpfung erstellen
+
+Comment=Create a softlink to the selected file
+Comment[fr]=Crée un lien symbolique vers le fichier sélectionné
+Comment[de]=Eine Verknüfung mit der ausgewählten Datei erstellen
+
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+Exec=bash -c "filename=\"%F\"; basename=$(basename \"$filename\"); ln -s \"$filename\" \"%P\"/\"link to $basename\""
+
+Selection=S
+Extensions=any;
+Icon-Name=emblem-symbolic-link
