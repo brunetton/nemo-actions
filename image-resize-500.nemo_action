@@ -1,0 +1,42 @@
+[Nemo Action]
+
+# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
+#
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+
+
+# The name to show in the menu, locale supported with standard desktop spec.
+Name=Resize 500px
+Name[fr]=Redimentionner 500px
+# Tool tip, locale supported (Appears in the status bar)
+Comment=Use ImageMagick''s Convert to resize image
+Comment[fr]=Utilise mogrify de ImageMagick pour redimentionner l''image
+
+; Exec=bash -c "filename=\"%F\"; rm -f \"${filename%.*}.mp3\"; lame -b 128 \"$filename\" \"${filename%.*}.mp3\""
+; Exec=bash -c "filenames=\"%F\"; echo $filenames > ~/aaa"
+Exec=bash -c "rm -rf %P/resized_images; mkdir %P/resized_images; mogrify -resize \"500>\" -path %P/resized_images %F"
+EscapeSpaces=true
+
+#Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
+# Icon name to use in the menu - must be a theme icon name
+Icon-Name=sound
+
+# What type selection: [s]ingle, [m]ultiple, any, notnone, none (background click), or
+# a number representing how many files must be selected to display.
+Selection=notnone
+
+# What mime-types to display on - this is an array, end with a semicolon
+# **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
+Mimetypes=image/*;
+
+# Dependencies - program executables required for this action to work.  Nemo will
+# Search in the path for these program(s) and not display the action if any are missing.
+# You can also supply an absolute path to a file (i.e. /usr/lib/gvfs/gvfsd-archive) to check
+# instead of or in addition to an executable in the path.
+# This is an array, separate entries with semi-colon, and terminate with a semicolon.
+Dependencies=mogrify;
