@@ -1,8 +1,8 @@
 # Some [more or less custom] Nemo actions
 
-![](screenshots/mp3_convert.png) ![](screenshots/sound_extract.png) ![](screenshots/image_resize.png)
-
 ## AUdio / Video
+
+![](screenshots/mp3_convert.png) ![](screenshots/sound_extract.png) ![](screenshots/image_resize.png) ![](screenshots/stabilize_videos.png)
 
   * **extract_sound** : use **ffmpeg** to extract sound from video, and create a sound file in the same dir (with corresponding extension)
   * **concatenate_wavs** : use **sox** to concatenate multiple wavs, and create a resulting wav file in the same dir (named as concatenation of wavs filenames)
