@@ -31,8 +31,8 @@ TEXTS = {
 ZENITY_WITH_OPTIONS = "zenity --progress --title=Working... --text=#{TEXTS[:stabilization][LANG]} --auto-close"
 DEFAULT_SMOOTHING_FACTOR = 6  # Number of frames to look befre and after current frame to detect movement.
 FFMPEG_COMMANDS = [
-  'ffmpeg -loglevel error -i "{input_file}" -vf vidstabdetect=result="{input_file}.trf" -f null -',
-  'ffmpeg -loglevel error -i "{input_file}" -vf vidstabtransform=input="{input_file}.trf":smoothing={smoothing_factor} -acodec copy -vcodec h264 -preset slow -tune film -crf 23 "{output_file}"'
+  'ffmpeg -i "{input_file}" -vf vidstabdetect=result="{input_file}.trf" -f null -',
+  'ffmpeg -i "{input_file}" -vf vidstabtransform=input="{input_file}.trf":smoothing={smoothing_factor} -acodec copy -vcodec h264 -preset slow -tune film -crf 23 "{output_file}"'
 ]
 
 $log = ''  # Unused for now, but could be presented to user at the end of the process
