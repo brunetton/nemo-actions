@@ -94,6 +94,7 @@ if not $?.success?
   puts "Cancelled by user"
   exit
 end
+smoothing_factor.strip!
 
 total_nb_files = files_to_treat.length
 total_nb_actions = total_nb_files * 2
