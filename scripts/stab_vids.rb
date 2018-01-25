@@ -30,9 +30,10 @@ TEXTS = {
 
 ZENITY_WITH_OPTIONS = "zenity --progress --title=Working... --text=#{TEXTS[:stabilization][LANG]} --auto-close"
 DEFAULT_SMOOTHING_FACTOR = 6  # Number of frames to look befre and after current frame to detect movement.
+FFMPEG_PATH = "ffmpeg"
 FFMPEG_COMMANDS = [
-  'ffmpeg -i "{input_file}" -vf vidstabdetect=result="{input_file}.trf" -f null -',
-  'ffmpeg -i "{input_file}" -vf vidstabtransform=input="{input_file}.trf":smoothing={smoothing_factor} -acodec copy -vcodec h264 -preset slow -tune film -crf 23 "{output_file}"'
+  '{ffmpeg} -i "{input_file}" -vf vidstabdetect=result="{input_file}.trf" -f null -',
+  '{ffmpeg} -i "{input_file}" -vf vidstabtransform=input="{input_file}.trf":smoothing={smoothing_factor} -acodec copy -vcodec h264 -preset slow -tune film -crf 23 "{output_file}"'
 ]
 
 $log = ''  # Unused for now, but could be presented to user at the end of the process
@@ -55,7 +56,7 @@ def ffmpeg_pass(input_filename, pass_nb, smoothing_factor, out_dir)
   trf_file = "#{input_filename}.trf"
   File.delete(trf_file) if pass_nb == 1 and File.exist?(trf_file)
   output_file = File.join(out_dir, File.basename(input_filename))
-  command = FFMPEG_COMMANDS[pass_nb-1].gsub('{input_file}', input_filename).gsub('{output_file}', output_file).gsub('{smoothing_factor}', smoothing_factor)
+  command = FFMPEG_COMMANDS[pass_nb-1].gsub('{input_file}', input_filename).gsub('{output_file}', output_file).gsub('{smoothing_factor}', smoothing_factor).gsub('{ffmpeg}', FFMPEG_PATH)
   $log += exec_command(command)
 end
 
