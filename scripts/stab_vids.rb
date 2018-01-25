@@ -18,8 +18,8 @@ TEXTS = {
     fr: 'Stabilisation ...',
   },
   smooth_factor: {
-    en: 'Select smoothing factor\n(number of frames before <b>and after</b> where to look to detect movement)',
-    fr: "Sélectionnez le smoothing factor\n(nombre d'images avant <b>et après</b> l'image actuelle\noù détecter du mouvement)",
+    en: 'Select <i>smoothing factor</i>\n(number of frames before <b>and after</b> where to look to detect movement)',
+    fr: "Sélectionnez le <i>smoothing factor</i>\n(nombre d'images avant <b>et après</b> l'image actuelle\noù détecter du mouvement)",
   },
   finished: {
     en: 'Finished !',
