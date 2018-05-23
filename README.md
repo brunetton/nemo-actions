@@ -1,6 +1,6 @@
 # Some [more or less custom] Nemo actions
 
-## AUdio / Video
+## Audio / Video
 
 ![](screenshots/mp3_convert.png) ![](screenshots/sound_extract.png) ![](screenshots/image_resize.png) ![](screenshots/stabilize_videos.png)
 
@@ -16,6 +16,7 @@
   * **paste_link** : create a softlink to selected file, in the same directory (same name, prefixed by "link to")
   * **pdfimages_extract** : use **pdfimages** command (`poppler-utils` package in Debian) to extract images from PDF and place them in "pdfimages" subdir
   * **pdf_repair** : use **qpdf** command to repair PDF file and create "-repaired.pdf" file
+  * **pdf_to_djvu** : use **pdf2djvu** command to convert PDF file to DJVU format
 
 ## INSTALL
 
