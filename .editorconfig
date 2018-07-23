@@ -1,0 +1,5 @@
+[*]
+indent_style = space
+
+[*.rb]
+indent_size = 2
