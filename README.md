@@ -2,12 +2,12 @@
 
 ## Audio / Video
 
-![](screenshots/mp3_convert.png) ![](screenshots/sound_extract.png) ![](screenshots/image_resize.png) ![](screenshots/stabilize_videos.png)
+![](screenshots/mp3_convert.png) ![](screenshots/sound_extract.png) ![](screenshots/image_resize.png) ![](screenshots/flac.png) ![](screenshots/stabilize_videos.png)
 
   * **extract_sound** : use **ffmpeg** to extract sound from video, and create a sound file in the same dir (with corresponding extension)
   * **concatenate_wavs** : use **sox** to concatenate multiple wavs, and create a resulting wav file in the same dir (named as concatenation of wavs filenames)
   * **convert_to_mp3** : use **lame** to convert file to mp3, and create a sound file in the same dir (with corresponding extension). No check is done on the file format (must be wav)
-  * **convert_to_flac** : use **flac** to convert file to flac, and create a sound file in the same dir (with corresponding extension). No check is done on the file format (must be wav)
+  * **convert_to_flac** : use **flac** to convert files to flac, and create sound files in the same dir (with corresponding extension). No check is done on the file format (must be wav)
   * **image_resize** : use **mogrify** to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
 
