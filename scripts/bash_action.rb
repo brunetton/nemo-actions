@@ -5,7 +5,6 @@
 require 'pp'
 require 'open3'
 require 'docopt'
-require 'uri'
 
 ZENITY_WITH_OPTIONS = 'zenity --progress --title=Working... --auto-close'.freeze
 $log = '' # Unused for now, but could be presented to user at the end of the process
@@ -13,6 +12,7 @@ $log = '' # Unused for now, but could be presented to user at the end of the pro
 doc = <<DOCOPT
 Apply given command to multiple files and display a process dialog, using Zenity.
 In command, "{}" will be replaced by each given filename.
+When used in a nemo action, should be used with EscapeSpaces=true option in .nemo_action file.
 
 Usage:
   #{__FILE__} <command_line> <filenames>...
@@ -51,9 +51,7 @@ rescue Docopt::Exit => e
   exit
 end
 
-pp args
-# Convert from "file:///tmp/tests%20wavs/1.wav" to "/tmp/tests wavs/1.wav"
-files_to_treat = args['<filenames>'].map { |filename| URI.decode(URI.split(filename)[5]) }
+files_to_treat = args['<filenames>']
 
 begin
   IO.popen(ZENITY_WITH_OPTIONS.split(' '), 'w') do |io|

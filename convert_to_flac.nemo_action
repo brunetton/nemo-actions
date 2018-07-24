@@ -18,8 +18,8 @@ Comment[fr]=Utilise flac pour convertir le fichier audio en FLAC
 # %f or %N (deprecated) - insert display name of first selected file
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
-Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.flac\"; flac --best \"$filename\"" %U>
-#EscapeSpaces=true
+EscapeSpaces=true
+Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.flac\"; flac --best \"$filename\"" %F>
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name
