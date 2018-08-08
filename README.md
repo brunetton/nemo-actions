@@ -10,6 +10,7 @@
   * **convert_to_flac** : use **flac** to convert files to flac, and create sound files in the same dir (with corresponding extension). No check is done on the file format (must be wav)
   * **image_resize** : use **mogrify** to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
+  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
 
 ## Others
 
