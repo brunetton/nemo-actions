@@ -26,11 +26,11 @@ Icon-Name=gnome-run
 
 # What type selection: [s]ingle, [m]ultiple, any, notnone, none (background click), or
 # a number representing how many files must be selected to display.
-Selection=none
+Selection=s
 
 # What mime-types to display on - this is an array, end with a semicolon
 # **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
-Mimetypes=audio/x-wav;
+Mimetypes=inode/directory;
 
 # Dependencies - program executables required for this action to work.  Nemo will
 # Search in the path for these program(s) and not display the action if any are missing.
