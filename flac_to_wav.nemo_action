@@ -5,8 +5,8 @@
 Name=Convert to WAV
 Name[fr]=Convertir en WAV
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use flac to convert audio file to WAV
-Comment[fr]=Utilise flac pour convertir le fichier audio en WAV
+Comment=Use flac to convert audio file to WAV (delete FLAC file when no errors)
+Comment[fr]=Utilise flac pour convertir le fichier audio en WAV (supprime le fichier original si aucune erreur)
 
 
 # %U - insert URI list of selection

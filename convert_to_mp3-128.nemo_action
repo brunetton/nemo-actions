@@ -14,8 +14,8 @@
 Name=Convert to mp3 - 128 kbps (< CD)
 Name[fr]=Convertir en mp3 - 128 kbps (qualité < CD)
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to convert audio file to mp3
-Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3
+Comment=Use ffmpeg to convert audio file to mp3 (conserve les originaux)
+Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3 (original files are kept)
 
 # fm/radio/tape => 112kbps    hifi => 160kbps
 # cd => 192kbps               studio => 256kbps
