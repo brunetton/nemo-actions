@@ -22,6 +22,7 @@
 
 ## INSTALL
 
+  - install zenity
   - link or put files to `~/.local/share/nemo/actions/`
   - restart nemo (`nemo -q`)
 
