@@ -1,0 +1,43 @@
+[Nemo Action]
+
+# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
+#
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+
+
+# The name to show in the menu, locale supported with standard desktop spec.
+Name=Convert to mp3 - 96 kbps (< CD)
+Name[fr]=Convertir en mp3 - 96 kbps (qualité < CD)
+# Tool tip, locale supported (Appears in the status bar)
+Comment=Use ffmpeg to convert audio file to mp3 (keep original files)
+Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3 (conserve les originaux)
+
+# fm/radio/tape => 112kbps    hifi => 160kbps
+# cd => 192kbps               studio => 256kbps
+
+Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.mp3\"; lame -V2 --abr 96 \"$filename\" \"${filename%.*}.mp3\"" %F>
+EscapeSpaces=true
+
+#Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
+# Icon name to use in the menu - must be a theme icon name
+Icon-Name=sound
+
+# What type selection: [s]ingle, [m]ultiple, any, notnone, none (background click), or
+# a number representing how many files must be selected to display.
+Selection=notnone
+
+# What mime-types to display on - this is an array, end with a semicolon
+# **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
+Mimetypes=audio/wav;
+
+# Dependencies - program executables required for this action to work.  Nemo will
+# Search in the path for these program(s) and not display the action if any are missing.
+# You can also supply an absolute path to a file (i.e. /usr/lib/gvfs/gvfsd-archive) to check
+# instead of or in addition to an executable in the path.
+# This is an array, separate entries with semi-colon, and terminate with a semicolon.
+Dependencies=lame;
