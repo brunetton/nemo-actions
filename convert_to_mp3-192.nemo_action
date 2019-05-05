@@ -14,14 +14,14 @@
 Name=Convert to mp3 - 192 kbps (CD quality)
 Name[fr]=Convertir en mp3 - 192 kbps (qualité CD)
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to convert audio file to mp3
-Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3
+Comment=Use ffmpeg to convert audio file to mp3 (keep original files)
+Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3 (conserve les originaux)
 
 # fm/radio/tape => 112kbps    hifi => 160kbps
 # cd => 192kbps               studio => 256kbps
 
-Exec=bash -c "filename=\"%F\"; rm -f \"${filename%.*}.mp3\"; lame -b 192 \"$filename\" \"${filename%.*}.mp3\""
-#EscapeSpaces=true
+Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.mp3\"; lame -b 192 \"$filename\" \"${filename%.*}.mp3\"" %F>
+EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name
@@ -29,7 +29,7 @@ Icon-Name=sound
 
 # What type selection: [s]ingle, [m]ultiple, any, notnone, none (background click), or
 # a number representing how many files must be selected to display.
-Selection=single
+Selection=notnone
 
 # What mime-types to display on - this is an array, end with a semicolon
 # **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****

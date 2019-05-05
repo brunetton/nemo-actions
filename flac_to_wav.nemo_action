@@ -1,27 +1,22 @@
 [Nemo Action]
 
-# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
-#
+
+# The name to show in the menu, locale supported with standard desktop spec.
+Name=Convert to WAV
+Name[fr]=Convertir en WAV
+# Tool tip, locale supported (Appears in the status bar)
+Comment=Use flac to convert audio file to WAV (delete FLAC file when no errors)
+Comment[fr]=Utilise flac pour convertir le fichier audio en WAV (supprime le fichier original si aucune erreur)
+
+
 # %U - insert URI list of selection
 # %F - insert path list of selection
 # %P - insert path of parent (current) directory
 # %f or %N (deprecated) - insert display name of first selected file
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
-
-
-# The name to show in the menu, locale supported with standard desktop spec.
-Name=Convert to mp3 - 256 kbps (studio quality)
-Name[fr]=Convertir en mp3 - 256 kbps (qualité studio)
-# Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to convert audio file to mp3 (keep original files)
-Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3 (conserve les originaux)
-
-# fm/radio/tape => 112kbps    hifi => 160kbps
-# cd => 192kbps               studio => 256kbps
-
-Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.mp3\"; lame -b 256 \"$filename\" \"${filename%.*}.mp3\"" %F>
 EscapeSpaces=true
+Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.wav\"; flac --decode \"$filename\"" %F>
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name
@@ -33,11 +28,11 @@ Selection=notnone
 
 # What mime-types to display on - this is an array, end with a semicolon
 # **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
-Mimetypes=audio/wav;
+Mimetypes=audio/flac;
 
 # Dependencies - program executables required for this action to work.  Nemo will
 # Search in the path for these program(s) and not display the action if any are missing.
 # You can also supply an absolute path to a file (i.e. /usr/lib/gvfs/gvfsd-archive) to check
 # instead of or in addition to an executable in the path.
 # This is an array, separate entries with semi-colon, and terminate with a semicolon.
-Dependencies=lame;
+Dependencies=flac;
