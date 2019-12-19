@@ -22,24 +22,30 @@ Example:
 
 DOCOPT
 
-# Execute external command and return all output streams as string
+# Execute external command and return all output streams as string.
+# Raise if exit code is not OK
 def exec_command(command)
   log = ''
   puts "\n=> Executing \"#{command}\""
   log += "\n\n=> Executing \"#{command}\"\n"
-  Open3.popen2e(command) do |_stdin, stdout_and_stderr, _wait_thr|
+  Open3.popen2e({"SHELL" => "bash"}, command) do |_stdin, stdout_and_stderr, wait_thr|
     stdout_and_stderr.each do |line|
       puts line
       log += line
     end
+    exit_status = wait_thr.value
+    unless exit_status.success?
+      # throw log
+      raise log
+    end
   end
-  log
+  return log
 end
 
 def percent(done, total)
   percent = (done / Float(total)) * 100
   puts "\n--- #{percent} %\n"
-  percent
+  return percent
 end
 
 ### Main
@@ -57,7 +63,7 @@ begin
   IO.popen(ZENITY_WITH_OPTIONS.split(' '), 'w') do |io|
     done = 0 # number of treated files
     files_to_treat.each do |filepath|
-      puts('=> ' + filepath)
+      puts('=> file: ' + filepath)
       file_command_line = args['<command_line>'].gsub('{}', filepath)
       exec_command(file_command_line)
       done += 1
@@ -65,6 +71,10 @@ begin
       io.puts(percent(done, files_to_treat.length))
     end
   end
+rescue => e
+  puts("Error received: #{e}")
+  system("zenity --width 500 --error --no-wrap --text \"Subprocess error:\n\n#{e.to_s.gsub('"', '\"')}\"")
+  abort
 end
 
 puts "\nEND"
