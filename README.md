@@ -28,6 +28,13 @@
   - link or put files to `~/.local/share/nemo/actions/`
   - restart nemo (`nemo -q`)
 
+## DEBUG
+
+```
+nemo -q
+NEMO_ACTION_VERBOSE=1 nemo --no-desktop
+```
+
 ## TODO
 
   * catch errors and use Zenity to pass error messages to user
