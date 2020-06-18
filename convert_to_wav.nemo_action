@@ -11,11 +11,11 @@
 
 
 # The name to show in the menu, locale supported with standard desktop spec.
-Name=Convert to WAV
-Name[fr]=Convertir en WAV
+Name=Convert mp3 to WAV
+Name[fr]=Convertir des mp3 en WAV
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to convert audio file to wav (keep original files)
-Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en wav (conserve les originaux)
+Comment=Use ffmpeg to convert mp3 audio file to wav (keep original files)
+Comment[fr]=Utilise ffmpeg pour convertir le(s) fichier(s) mp3 en wav (conserve les originaux)
 
 Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.wav\"; lame --decode \"$filename\"" %F>
 EscapeSpaces=true

@@ -24,6 +24,7 @@
 ## INSTALL
 
   - install zenity
+  - install lame (to use audio conversion scripts)
   - install Ruby Docopt (`gem install docopt`)
   - link or put files to `~/.local/share/nemo/actions/`
   - restart nemo (`nemo -q`)
