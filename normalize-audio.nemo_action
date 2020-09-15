@@ -17,7 +17,7 @@ Name[fr]=Normaliser l'audio
 Comment=Use ffmpeg to normalize audio wav file(s) (keep original files in "originals" subdir)
 Comment[fr]=Utilise ffmpeg pour normaliser le(s) fichier(s) wav (conserve les originaux dans le sous répertoire "originals")
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; mkdir -p originals; ffmpeg -i \"$filename\" -filter:a loudnorm=i=-18:lra=17 -qscale:a 2 \"${filename%.*}-norm.wav\"; mv \"$filename\" originals" %F>
+Exec=<scripts/bash_action.rb "  filename=\"{}\"; mkdir -p originals; ffmpeg -i \"$filename\" -filter:a loudnorm=i=-18:lra=17 -qscale:a 2 \"${filename%.*}-norm.wav\" && mv \"$filename\" originals && mv \"${filename%.*}-norm.wav\" \"$filename\"  " %F>
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
