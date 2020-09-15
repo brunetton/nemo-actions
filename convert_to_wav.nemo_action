@@ -11,13 +11,13 @@
 
 
 # The name to show in the menu, locale supported with standard desktop spec.
-Name=Convert mp3 to WAV
-Name[fr]=Convertir des mp3 en WAV
+Name=Convert audio to WAV
+Name[fr]=Convertir audio en WAV
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use ffmpeg to convert mp3 audio file to wav (keep original files)
+Comment=Use ffmpeg to convert audio file(s) to wav (keep original files)
 Comment[fr]=Utilise ffmpeg pour convertir le(s) fichier(s) mp3 en wav (conserve les originaux)
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; rm -f \"${filename%.*}.wav\"; lame --decode \"$filename\"" %F>
+Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%.*}.wav\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F>
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
@@ -30,7 +30,7 @@ Selection=notnone
 
 # What mime-types to display on - this is an array, end with a semicolon
 # **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
-Mimetypes=audio/mp3;
+Mimetypes=audio/*;
 
 # Dependencies - program executables required for this action to work.  Nemo will
 # Search in the path for these program(s) and not display the action if any are missing.

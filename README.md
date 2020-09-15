@@ -7,7 +7,7 @@
   * **extract_sound** : use **ffmpeg** to extract sound from video, and create a sound file in the same dir (with corresponding extension)
   * **concatenate_wavs** : use **sox** to concatenate multiple wavs, and create a resulting wav file in the same dir (named as concatenation of wavs filenames)
   * **convert_to_mp3** : use **lame** to convert files to mp3, and create sound files in the same dir (with corresponding extension). No check is done on the file format (must be wav)
-  * **convert_to_wav** : use **lame** to convert files to wav, and create sound files in the same dir (with corresponding extension).
+  * **convert_to_wav** : use **ffmpeg** to convert files to wav, and create sound files in the same dir (with corresponding extension).
   * **convert_to_flac** : use **flac** to convert files to flac, and create sound files in the same dir (with corresponding extension). No check is done on the file format (must be wav)
   * **normalize audio** : use **ffmpeg** to normalize audio levels (using `loudnorm` filter), and create sound files in the same dir (with "-norm" appended to name). No check is done on the file format (must be wav)
   * **flac_to_wav** : use **flac** to extract selected flac file(s) to wav
