@@ -14,6 +14,7 @@
   * **image_resize** : use **mogrify** to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
+  * **remove_node_modules** : recursively remove `node_modules` dirs
 
 ## Others
 
@@ -33,8 +34,7 @@
 ## DEBUG
 
 ```
-nemo -q
-NEMO_ACTION_VERBOSE=1 nemo --no-desktop
+nemo -q; NEMO_ACTION_VERBOSE=1 nemo --no-desktop
 ```
 
 ## Write an action
