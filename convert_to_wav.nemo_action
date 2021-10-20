@@ -37,4 +37,4 @@ Mimetypes=audio/*;
 # You can also supply an absolute path to a file (i.e. /usr/lib/gvfs/gvfsd-archive) to check
 # instead of or in addition to an executable in the path.
 # This is an array, separate entries with semi-colon, and terminate with a semicolon.
-Dependencies=lame;
+Dependencies=ffmpeg;
