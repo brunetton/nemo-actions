@@ -40,8 +40,10 @@ nemo -q; NEMO_ACTION_VERBOSE=1 nemo --no-desktop
 ## Write an action
 
 To make scripts executed to multiple files with a progress bar, use `bash_action.rb`. Simple example:
-
-    `Exec=<scripts/bash_action.rb "   filename=\"{}\"; ls \"$filename\"   " %F>`
+  - execute `ls` command on each selected files:
+    `Exec=<scripts/bash_action.rb "ls {}" %F>`
+  - same effect, but adding a bash variable:
+    `Exec=<scripts/bash_action.rb "filename={}; ls \"$filename\"" %F>`
 
 Take a look to existing actions. Particularly `flac_to_wav.nemo_action` is a simple real-world example.
 
