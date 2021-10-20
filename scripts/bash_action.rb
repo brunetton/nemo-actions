@@ -26,7 +26,7 @@ DOCOPT
 # Raise if exit code is not OK
 def exec_command(command)
   log = ''
-  puts "\n=> Executing \"#{command}\""
+  puts "Executing \"#{command}\""
   log += "\n\n=> Executing \"#{command}\"\n"
   Open3.popen2e({"SHELL" => "bash"}, command) do |_stdin, stdout_and_stderr, wait_thr|
     stdout_and_stderr.each do |line|
@@ -58,6 +58,8 @@ rescue Docopt::Exit => e
 end
 
 files_to_treat = args['<filenames>']
+
+puts "Will apply command \"#{args['<command_line>']}\" on #{files_to_treat.length} files\n\n"
 
 begin
   IO.popen(ZENITY_WITH_OPTIONS.split(' '), 'w') do |io|
