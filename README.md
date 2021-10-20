@@ -1,5 +1,7 @@
 # Some [more or less custom] Nemo actions
 
+**Update** since some versions of nemo, some actions doesn't works anymore. This is due to [an issue](https://github.com/linuxmint/nemo/issues/2274) in nemo actions files parsing. Until this problem is solved, those actions won't work anymore (this is a problem parsing `%` of bash parameter expansion)
+
 ## Audio / Video
 
 ![](screenshots/sound_conversion.png) ![](screenshots/flac_to_wav.png) ![](screenshots/image_resize.png) ![](screenshots/stabilize_videos.png)
