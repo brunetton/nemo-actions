@@ -13,7 +13,7 @@
   * **convert_to_flac** : use **flac** to convert files to flac, and create sound files in the same dir (with corresponding extension). No check is done on the file format (must be wav)
   * **normalize audio** : use **ffmpeg** to normalize audio levels (using `loudnorm` filter), and create sound files in the same dir (with "-norm" appended to name). No check is done on the file format (must be wav)
   * **flac_to_wav** : use **flac** to extract selected flac file(s) to wav
-  * **image_resize** : use **mogrify** to resize images
+  * **image_resize** : use **mogrify** (ImageMagick) to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
   * **remove_node_modules** : recursively remove `node_modules` dirs
@@ -32,6 +32,21 @@
   - `bundle install` (this will install Ruby dependencies)
   - link or put files to `~/.local/share/nemo/actions/`
   - restart nemo (`nemo -q`)
+
+### Other dependencies
+
+  - Imagemagick (`apt install imagemagick`) to use images resizing
+  - ffmpeg (`apt install ffmpeg`) to use video tools
+  - sox (`apt install sox`) to use wavs concatenation tools
+  - lame (`apt install lame`) to use audio conversions tools
+  - flac (`apt install flac`) to use flac compression tools
+  - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
+  - pdf_repair (`apt install gpdf`) to use PDF file repairing tools
+  - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
+
+All in one:
+
+    apt install imagemagick ffmpeg sox lame flac poppler gpdf pdf2djvu
 
 ## DEBUG
 
