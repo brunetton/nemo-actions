@@ -41,12 +41,12 @@
   - lame (`apt install lame`) to use audio conversions tools
   - flac (`apt install flac`) to use flac compression tools
   - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
-  - pdf_repair (`apt install gpdf`) to use PDF file repairing tools
+  - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
 
 All in one:
 
-    apt install imagemagick ffmpeg sox lame flac poppler gpdf pdf2djvu
+    apt install imagemagick ffmpeg sox lame flac poppler-utils qpdf pdf2djvu
 
 ## DEBUG
 
