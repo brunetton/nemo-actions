@@ -30,7 +30,7 @@ Selection=notnone
 
 # What mime-types to display on - this is an array, end with a semicolon
 # **** EITHER EXTENSIONS OR MIMETYPES IS REQUIRED *****
-Mimetypes=audio/wav;
+Mimetypes=audio/*;
 
 # Dependencies - program executables required for this action to work.  Nemo will
 # Search in the path for these program(s) and not display the action if any are missing.
