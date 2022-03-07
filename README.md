@@ -64,6 +64,8 @@ To make scripts executed to multiple files with a progress bar, use `bash_action
 
 Take a look to existing actions. Particularly `flac_to_wav.nemo_action` is a simple real-world example.
 
+To specify icon you can use `Icon-Name`. Available icons are located in `/usr/share/icons/gnome/32x32/actions`.
+
 ### Some tricks:
 - the space between `"` and `%F>` is important; ie `"%F>` will **not** work
 
