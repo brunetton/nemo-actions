@@ -1,0 +1,25 @@
+[Nemo Action]
+
+# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
+#
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+
+
+# The name to show in the menu, locale supported with standard desktop spec.
+Name=Share in Public
+Name[fr]=Partager dans Public
+# Tool tip, locale supported (Appears in the status bar)
+Comment=Create a symlink to Public directory
+Comment[fr]=Crée un lien symbolique vers le répertoire Public
+
+EscapeSpaces=false
+Exec=bash -c "ln -s \"%F\" ~/Public"
+
+Selection=single
+Extensions=any
+Icon-Name=document-send

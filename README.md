@@ -24,6 +24,7 @@
   * **pdfimages_extract** : use **pdfimages** command (`poppler-utils` package in Debian) to extract images from PDF and place them in "pdfimages" subdir
   * **pdf_repair** : use **qpdf** command to repair PDF file and create "-repaired.pdf" file
   * **pdf_to_djvu** : use **pdf2djvu** command to convert PDF file to DJVU format
+  * **link to Public** : make a link to the file onto ~/Public directory (typically shared via Samba)
 
 ## INSTALL
 
