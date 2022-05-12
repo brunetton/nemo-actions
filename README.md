@@ -16,6 +16,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **flac_to_wav** : use **flac** to extract selected flac file(s) to wav
   * **image_resize** : use **mogrify** (ImageMagick) to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
+  * **convert_to_gif**: use **ffmpeg** to convert selected videos to Gif (animated)
 
 ## Others
 
