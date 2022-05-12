@@ -27,6 +27,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **link to Public** : make a link to the file onto ~/Public directory (typically shared via Samba)
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
   * **remove_node_modules** : recursively remove `node_modules` dirs
+  * **remove_exif_data** : use **exiftool** to remove exif data from image
 
 ## INSTALL
 
