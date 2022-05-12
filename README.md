@@ -1,6 +1,7 @@
 # Some [more or less custom] Nemo actions
 
-**Update** since some versions of nemo, some actions doesn't works anymore. This is due to [an issue](https://github.com/linuxmint/nemo/issues/2274) in nemo actions files parsing. Until this problem is solved, those actions won't work anymore (this is a problem parsing `%` of bash parameter expansion)
+**Update** since some versions of nemo, some actions doesn't works anymore. This is due to [an issue](https://github.com/linuxmint/nemo/issues/2274) in nemo actions files parsing (this is a problem parsing `%` of bash parameter expansion).
+The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/commit/5802d296191b4ccb7f14baa5889a9fa44d0d0f75) and deployed in Nemo version **4.8.3**. If you use an older version of Nemo you should see some errors invoking `%F`. Try to update Nemo to a version >= 4.8.3
 
 ## Audio / Video
 
@@ -15,8 +16,6 @@
   * **flac_to_wav** : use **flac** to extract selected flac file(s) to wav
   * **image_resize** : use **mogrify** (ImageMagick) to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
-  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
-  * **remove_node_modules** : recursively remove `node_modules` dirs
 
 ## Others
 
@@ -25,6 +24,8 @@
   * **pdf_repair** : use **qpdf** command to repair PDF file and create "-repaired.pdf" file
   * **pdf_to_djvu** : use **pdf2djvu** command to convert PDF file to DJVU format
   * **link to Public** : make a link to the file onto ~/Public directory (typically shared via Samba)
+  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
+  * **remove_node_modules** : recursively remove `node_modules` dirs
 
 ## INSTALL
 
