@@ -37,7 +37,11 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   - install lame (to use audio conversion scripts)
   - `bundle install` (this will install Ruby dependencies)
   - link or put files to `~/.local/share/nemo/actions/`
-  - restart nemo (`nemo -q`)
+  - restart nemo (`nemo -q; nemo`)
+
+## Debug
+
+`nemo -q; NEMO_DEBUG=Actions nemo`
 
 ### Other dependencies
 
