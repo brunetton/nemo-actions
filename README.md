@@ -17,6 +17,8 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **image_resize** : use **mogrify** (ImageMagick) to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
   * **convert_to_gif**: use **ffmpeg** to convert selected videos to Gif (animated)
+  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
+  * **mass_rename** : launch [Thunar's mass reame utility](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) with selected files
 
 ## Others
 
@@ -29,7 +31,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **remove_node_modules** : recursively remove `node_modules` dirs
   * **remove_exif_data** : use **exiftool** to remove exif data from image
 
-## INSTALL
+## Install
 
   - install zenity
   - install lame (to use audio conversion scripts)
@@ -47,16 +49,11 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
   - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
+  - Thunar (`apt install thunar`) to use mass rename action
 
 All in one:
 
     apt install imagemagick ffmpeg sox lame flac poppler-utils qpdf pdf2djvu
-
-## DEBUG
-
-```
-nemo -q; NEMO_ACTION_VERBOSE=1 nemo --no-desktop
-```
 
 ## Write an action
 
@@ -69,6 +66,12 @@ To make scripts executed to multiple files with a progress bar, use `bash_action
 Take a look to existing actions. Particularly `flac_to_wav.nemo_action` is a simple real-world example.
 
 To specify icon you can use `Icon-Name`. Available icons are located in `/usr/share/icons/gnome/32x32/actions`.
+
+## Debug actions (show actions logs and Nemo errors about actions)
+
+```
+nemo -q; NEMO_ACTION_VERBOSE=1 nemo --no-desktop
+```
 
 ### Some tricks:
 - the space between `"` and `%F>` is important; ie `"%F>` will **not** work
