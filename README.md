@@ -57,7 +57,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
 
 All in one:
 
-    apt install imagemagick ffmpeg sox lame flac poppler-utils qpdf pdf2djvu
+    apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair pdf2djvu
 
 ## Write an action
 
