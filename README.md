@@ -17,10 +17,8 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **image_resize** : use **mogrify** (ImageMagick) to resize images
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
   * **convert_to_gif**: use **ffmpeg** to convert selected videos to Gif (animated)
-  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
-  * **mass_rename** : launch [Thunar's mass reame utility](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) with selected files
 
-## Others
+## Others actions
 
   * **paste_link** : create a softlink to selected file, in the same directory (same name, prefixed by "link to")
   * **pdfimages_extract** : use **pdfimages** command (`poppler-utils` package in Debian) to extract images from PDF and place them in "pdfimages" subdir
@@ -30,6 +28,8 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
   * **remove_node_modules** : recursively remove `node_modules` dirs
   * **remove_exif_data** : use **exiftool** to remove exif data from image
+  * **remove_empty_dirs** : recursively remove dirs that do not contains any file
+  * **mass_rename** : launch [Thunar's mass reame utility](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) with selected files
 
 ## Install
 
@@ -38,10 +38,6 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   - `bundle install` (this will install Ruby dependencies)
   - link or put files to `~/.local/share/nemo/actions/`
   - restart nemo (`nemo -q; nemo`)
-
-## Debug
-
-`nemo -q; NEMO_DEBUG=Actions nemo`
 
 ### Other dependencies
 
@@ -57,7 +53,11 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
 
 All in one:
 
-    apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair pdf2djvu
+    apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair pdf2djvu thunar
+
+## Debug
+
+`nemo -q; NEMO_DEBUG=Actions nemo`
 
 ## Write an action
 
