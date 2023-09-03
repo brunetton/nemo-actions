@@ -4,6 +4,9 @@
 import os
 import sys
 
+if len(sys.argv) != 2:
+    print("Syntax: remove_empty_dirs [path]")
+
 for dirpath, dirnames, filenames in os.walk(sys.argv[1], topdown=False, onerror=None, followlinks=False):
     print("dirpath: {!r}, dirnames: {!r}, filenames: {!r}".format(dirpath, dirnames, filenames))
     # We don't use dirnames given by os.walk() as it's not updated with deleted ones
