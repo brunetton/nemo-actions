@@ -17,7 +17,7 @@ Name[fr]=Convertir audio en WAV
 Comment=Use ffmpeg to convert audio file(s) to wav (keep original files)
 Comment[fr]=Utilise ffmpeg pour convertir le(s) fichier(s) mp3 en wav (conserve les originaux)
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%.*}.wav\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F>
+Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%%.*}.wav\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F>
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"

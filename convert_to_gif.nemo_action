@@ -19,8 +19,7 @@ Comment[fr]=Utilise ffmpeg pour convertir le fichier vidéo en gif animé
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
 EscapeSpaces=true
-; Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%.*}.gif\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F >
-Exec=bash -c "filename=\"%F\"; out=\"${filename%.*}.gif\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\""
+Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%%.*}.gif\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F >
 
 # Icon name to use in the menu - must be a theme icon name
 Icon-Name=system-run

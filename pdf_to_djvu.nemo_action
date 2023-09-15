@@ -17,8 +17,8 @@ Name[fr]=Convertir en DJVU (600 dpi)
 Comment=Use pdf2djvu command to convert PDF to DJVU (600 dpi)
 Comment[fr]=Utilise pdf2djvu pour convert le fichier PDF en DJVU (600 dpi)
 
-; Exec=bash -c "filename=\"%F\"; rm -f \"${filename%.*}.mp3\"; lame -b 128 \"$filename\" \"${filename%.*}.mp3\""
-Exec=bash -c "in_filename=\"%F\"; out_filename=\"${in_filename%.*}.djvu\"; rm -f \"$out_filename\"; pdf2djvu -o \"$out_filename\" -d 600 -j $(nproc) \"$in_filename\" "
+; Exec=bash -c "filename=\"%F\"; rm -f \"${filename%%.*}.mp3\"; lame -b 128 \"$filename\" \"${filename%%.*}.mp3\""
+Exec=bash -c "in_filename=\"%F\"; out_filename=\"${in_filename%%.*}.djvu\"; rm -f \"$out_filename\"; pdf2djvu -o \"$out_filename\" -d 600 -j $(nproc) \"$in_filename\" "
 EscapeSpaces=false
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
