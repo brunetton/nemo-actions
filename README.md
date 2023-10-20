@@ -31,6 +31,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **remove_exif_data** : use **exiftool** to remove exif data from image
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
   * **mass_rename** : launch [Thunar's mass reame utility](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) with selected files
+  * **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
 
 ## Install
 
