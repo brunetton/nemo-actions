@@ -29,12 +29,12 @@ assert os.path.isfile(in_complete_filename)
 
 # get audio stream type
 ffprobe_infos = execute('ffprobe "{}"'.format(in_complete_filename))
-match = re.search('Stream #.+: Audio: ([^ ]+)', ffprobe_infos)
+match = re.search('Stream #.+: Audio: ([^ ,]+)', str(ffprobe_infos))
 if match:
     audio_format = match.group(1)
 else:
     raise Exception("No audio found in file")
-print "-> audio_format: {}".format(audio_format)
+print("-> audio_format: {}".format(audio_format))
 
 # WAV formats special case
 if re.search('pcm_.*', audio_format):
