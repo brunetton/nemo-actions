@@ -3,7 +3,7 @@ import os
 import sys
 import subprocess
 
-files_to_process = sys.argv[1:]
+files_to_process = sorted(sys.argv[1:])
 
 out_path = os.path.dirname(sys.argv[1])
 
