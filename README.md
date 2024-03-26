@@ -16,6 +16,7 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   * **normalize audio** : use **ffmpeg** to normalize audio levels (using `loudnorm` filter), and create sound files in the same dir (with "-norm" appended to name). No check is done on the file format (must be wav)
   * **flac_to_wav** : use **flac** to extract selected flac file(s) to wav
   * **image_resize** : use **mogrify** (ImageMagick) to resize images
+  * **convert to webp** : use **mogrify** (ImageMagick) to convert images to [Webp](https://en.wikipedia.org/wiki/WebP) format
   * **stabilize_videos** : use **ffmpeg / libvid.stab** to stabilize a video file, or all videos inside a directory, and display advancement using **zenity**
   * **repair_video** : use **ffmpeg** to "repair" a video file, ie copy content and rewrite file headers
   * **convert_to_gif**: use **ffmpeg** to convert selected videos to Gif (animated)
