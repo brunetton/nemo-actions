@@ -14,11 +14,11 @@
 Name=Extract images from PDF file
 Name[fr]=Extraire les images du PDF
 # Tool tip, locale supported (Appears in the status bar)
-Comment=Use pdfimages command (poppler-utils in Debian) to extract images from PDF and place them in "pdfimages" subdir
-Comment[fr]=Utilise pdfimages (du paquet poppler-utils sous Debian) pour extraire les images du PDF et les placer dans le sous-repertoire "pdfimages"
+Comment=Use pdfimages command (poppler-utils in Debian) to extract images from PDF
+Comment[fr]=Utilise pdfimages (du paquet poppler-utils sous Debian) pour extraire les images du PDF
 
 ; Exec=bash -c "filename=\"%F\"; rm -f \"${filename%.*}.mp3\"; lame -b 128 \"$filename\" \"${filename%.*}.mp3\""
-Exec=bash -c "rm -rf %P/pdfimages; mkdir %P/pdfimages; pdfimages -p %F %P/pdfimages/"
+Exec=bash -c "pdfimages -p %F %P"
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
