@@ -24,7 +24,7 @@ EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name
-Icon-Name=sound
+# Icon-Name=sound
 
 # What type selection: [s]ingle, [m]ultiple, any, notnone, none (background click), or
 # a number representing how many files must be selected to display.

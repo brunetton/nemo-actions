@@ -3,9 +3,9 @@
 **Update** since some versions of nemo, some actions doesn't works anymore. This is due to [an issue](https://github.com/linuxmint/nemo/issues/2274) in nemo actions files parsing (this is a problem parsing `%` of bash parameter expansion).
 The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/commit/5802d296191b4ccb7f14baa5889a9fa44d0d0f75) and deployed in Nemo version **4.8.3**. If you use an older version of Nemo you should see some errors invoking `%F`. Try to update Nemo to a version >= 4.8.3
 
-## Audio / Video
+## Audio / Video / Image
 
-![](screenshots/sound_conversion.png) ![](screenshots/flac_to_wav.png) ![](screenshots/image_resize.png) ![](screenshots/stabilize_videos.png)
+![](screenshots/sound_conversion.png) ![](screenshots/flac_to_wav.png) ![](screenshots/image.webp) ![](screenshots/stabilize_videos.png)
 
   * **extract_sound** : use **ffmpeg** to extract sound from video, and create a sound file in the same dir (with corresponding extension)
   * **concatenate_wavs** : use **sox** to concatenate multiple wavs, and create a resulting wav file in the same dir (named as concatenation of wavs filenames)
@@ -55,9 +55,9 @@ The problem has been fixed in [this commit](https://github.com/linuxmint/nemo/co
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
   - Thunar (`apt install thunar`) to use mass rename action
 
-All in one:
+### All in one installation (Debian / Ubuntu)
 
-    apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
+    apt install gnome-icon-theme imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
 
 ## Debug
 
@@ -73,7 +73,7 @@ To make scripts executed to multiple files with a progress bar, use `bash_action
 
 Take a look to existing actions. Particularly `flac_to_wav.nemo_action` is a simple real-world example.
 
-To specify icon you can use `Icon-Name`. Available icons are located in `/usr/share/icons/gnome/32x32/actions`.
+To specify icon you can use `Icon-Name`. Available icons are located in `/usr/share/icons/gnome/32x32/actions` (`gnome-icon-theme` package)
 
 ## Debug actions (show actions logs and Nemo errors about actions)
 
