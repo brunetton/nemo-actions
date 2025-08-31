@@ -20,7 +20,7 @@ Comment[fr]=Utilise ffmpeg pour "rÃ©parer" le fichier: copier le contenu mais rÃ
 # fm/radio/tape => 112kbps    hifi => 160kbps
 # cd => 192kbps               studio => 256kbps
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%%.*}-repaired.${filename##*.}\"; rm -f \"$out\"; ffmpeg -i \"$filename\" -c copy \"$out\"" %F>
+Exec=<scripts/bash_action.rb "filename={}; out=\"${filename%%.*}-repaired.${filename##*.}\"; rm -f \"$out\"; ffmpeg -i \"$filename\" -c copy \"$out\"" %F>
 
 EscapeSpaces=false
 

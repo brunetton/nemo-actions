@@ -5,6 +5,7 @@
 require 'pp'
 require 'open3'
 require 'docopt'
+require 'shellwords'
 
 ZENITY_WITH_OPTIONS = 'zenity --progress --title=Working... --auto-close'.freeze
 $log = '' # Unused for now, but could be presented to user at the end of the process
@@ -66,7 +67,7 @@ begin
     done = 0 # number of treated files
     files_to_treat.each do |filepath|
       puts('=> file: ' + filepath)
-      file_command_line = args['<command_line>'].gsub('{}', filepath)
+      file_command_line = args['<command_line>'].gsub('{}', Shellwords.escape(filepath))
       exec_command(file_command_line)
       done += 1
       # send percent to zenity

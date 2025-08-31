@@ -8,6 +8,9 @@
 # %f or %N (deprecated) - insert display name of first selected file
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
+# %e - insert display name of first selected file with the extension stripped
+# %% - insert a literal percent sign, don't treat the next character as a token
+# %X - insert the XID for the NemoWindow this action is being activated in.
 
 
 # The name to show in the menu, locale supported with standard desktop spec.
@@ -17,8 +20,8 @@ Name[fr]=Convertir audio en WAV
 Comment=Use ffmpeg to convert audio file(s) to wav (keep original files)
 Comment[fr]=Utilise ffmpeg pour convertir le(s) fichier(s) mp3 en wav (conserve les originaux)
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%%.*}.wav\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F>
 EscapeSpaces=true
+Exec=<scripts/bash_action.rb "filename={}; out=\"${filename%%.*}.wav\"; rm -f \"$out\"; ffmpeg -i \"$filename\" \"$out\"" %F>
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name

@@ -17,7 +17,7 @@ Name[fr]=Convertir audio en AAC 192k
 Comment=Use ffmpeg to convert audio file(s) to AAC (keep original files)
 Comment[fr]=Utilise ffmpeg pour convertir le(s) fichier(s) mp3 en AAC (conserve les originaux)
 
-Exec=<scripts/bash_action.rb "filename=\"{}\"; out=\"${filename%%.*}.aac\"; rm -f \"$out\"; ffmpeg -i \"$filename\" -b:a 192k \"$out\"" %F>
+Exec=<scripts/bash_action.rb "filename={}; out=\"${filename%%.*}.aac\"; rm -f \"$out\"; ffmpeg -i \"$filename\" -b:a 192k \"$out\"" %F>
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.AAC"

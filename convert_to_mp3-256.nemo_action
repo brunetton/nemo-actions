@@ -20,7 +20,7 @@ Comment[fr]=Utilise ffmpeg pour convertir le fichier audio en mp3 (conserve les 
 # fm/radio/tape => 112kbps    hifi => 160kbps
 # cd => 192kbps               studio => 256kbps
 
-Exec=<scripts/bash_action.rb "lame -V2 --abr 256 \"{}\"" %F>
+Exec=<scripts/bash_action.rb "lame -V2 --abr 256 {}" %F>
 EscapeSpaces=true
 
 #Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"

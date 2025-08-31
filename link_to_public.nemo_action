@@ -18,7 +18,7 @@ Comment=Create a symlink to Public directory
 Comment[fr]=Crée un lien symbolique vers le répertoire Public
 
 EscapeSpaces=false
-Exec=bash -c "ln -s \"%F\" ~/Public"
+Exec=bash -c "ln -s "%F" ~/Public"
 
 Selection=single
 Extensions=any
