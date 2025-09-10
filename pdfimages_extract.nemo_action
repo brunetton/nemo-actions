@@ -17,11 +17,10 @@ Name[fr]=Extraire les images du PDF
 Comment=Use pdfimages command (poppler-utils in Debian) to extract images from PDF
 Comment[fr]=Utilise pdfimages (du paquet poppler-utils sous Debian) pour extraire les images du PDF
 
-; Exec=bash -c "filename=\"%F\"; rm -f \"${filename%.*}.mp3\"; lame -b 128 \"$filename\" \"${filename%.*}.mp3\""
-Exec=bash -c "pdfimages -p %F %P"
+Exec=bash -c "pdfimages -p %F %P/"
+; Exec=bash -c "pdfimages -p /home/bruno/tmp/test_pdf/9613e281-91b1-4a9b-9498-5b2a809b0a44.pdf /home/bruno/tmp/test_pdf/"
 EscapeSpaces=true
 
-#Exec=echo "ffmpeg avconv -i %F -c:a pcm_s16le %P/son.wav"
 # Icon name to use in the menu - must be a theme icon name
 ; Icon-Name=sound
 
