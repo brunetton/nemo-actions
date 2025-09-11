@@ -7,7 +7,6 @@ require 'open3'
 require 'docopt'
 require 'shellwords'
 
-ZENITY_WITH_OPTIONS = 'zenity --progress --title=Working... --auto-close'.freeze
 $log = '' # Unused for now, but could be presented to user at the end of the process
 
 doc = <<DOCOPT
@@ -59,11 +58,15 @@ rescue Docopt::Exit => e
 end
 
 files_to_treat = args['<filenames>']
+warn "cmdline: #{args['<command_line>']}"
+warn "files_to_treat: #{files_to_treat}"
+warn "=> LEN: #{files_to_treat.length}"
 
 puts "Will apply command \"#{args['<command_line>']}\" on #{files_to_treat.length} files\n\n"
 
 begin
-  IO.popen(ZENITY_WITH_OPTIONS.split(' '), 'w') do |io|
+  IO.popen("zenity --progress --title=Working... --auto-close 2>/dev/null", 'w') do |io|
+  # IO.popen(ZENITY_WITH_OPTIONS.split(' '), 'w') do |io|
     done = 0 # number of treated files
     files_to_treat.each do |filepath|
       puts('=> file: ' + filepath)
@@ -76,11 +79,11 @@ begin
   end
 rescue => e
   puts("Error received: #{e}")
-  system("zenity --width 500 --error --no-wrap --text \"Subprocess error:\n\n#{e.to_s.gsub('"', '\"')}\"")
+  system("zenity --width 500 --error --no-wrap --text \"Subprocess error:\n\n#{e.to_s.gsub('"', '\"')}\" 2>/dev/null")
   abort
 end
 
 puts "\nEND"
 
 # End
-`zenity --info --text="End"`
+`zenity --info --text="End" 2>/dev/null`
