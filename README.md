@@ -1,5 +1,9 @@
 # Some [more or less custom] Nemo actions
 
+**=> 2025 update** For some reasons I swapped from Nemo to Nautilus and I'm now using the great [Actions for Nautilus](https://github.com/bassmanitram/actions-for-nautilus), and I've to say I'm very satistied about this change !
+
+So I created a [Nemo actions to actions-for-nautilus](https://github.com/brunetton/Nemo-action-to-Nautilus-action-converter) script that I found very usefull for transition.
+
 ## Audio / Video / Image
 
 ![](screenshots/sound_conversion.png) ![](screenshots/flac_to_wav.png) ![](screenshots/image.webp) ![](screenshots/stabilize_videos.png)
@@ -31,6 +35,7 @@
   * **remove_empty_dirs** : recursively remove dirs that do not contains any file
   * **mass_rename** : launch [Thunar's mass reame utility](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) with selected files
   * **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
+  * **pdf2png** : use **pdftoppm** utility to transform PDF to PNGs (same directory, default to 300ppm)
 
 ## Install
 
@@ -51,18 +56,29 @@
   - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
   - Thunar (`apt install thunar`) to use mass rename action
+  - pdftoppm (`apt install pdftoppm`) to use PDF -> PNG action
 
 ### All in one installation (Debian / Ubuntu)
 
-    apt install gnome-icon-theme imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
+    apt install gnome-icon-theme imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf pdftoppm
 
 ## Write an action
+
+### Simple way
+
+Here are some examples that works when spaces in filenames:
+
+`Exec=bash -c 'i=%F; ls "$i"'`
+
+`Exec=bash -c 'in_filename=%F; out_prefix=${in_filename%.*}; pdftoppm -png -r 300 "$in_filename" "$out_prefix"'`
+
+### Advanced way
 
 To make scripts executed to multiple files with a progress bar, use `bash_action.rb`. Simple example:
   - execute `ls` command on each selected files:
     `Exec=<scripts/bash_action.rb "ls {}" %F>`
   - same effect, but adding a bash variable:
-    `Exec=<scripts/bash_action.rb "filename={}; ls \"$filename\"" %F>`
+    `Exec=<scripts/bash_action.rb 'filename={}; ls "$filename"' %F>`
 
 Take a look to existing actions. Particularly `flac_to_wav.nemo_action` is a simple real-world example.
 
